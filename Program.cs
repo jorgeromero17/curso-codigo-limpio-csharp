@@ -14,19 +14,19 @@ namespace ToDo
             do
             {
                 menuSelected = ShowMainMenu();
-                if (menuSelected == 1)
+                if ((Menu)menuSelected == Menu.Add) //Casting a menu
                 {
                     ShowAddMenu();
                 }
-                else if (menuSelected == 2)
+                else if ((Menu)menuSelected == Menu.Remove)
                 {
                     ShowRemoveMenu();
                 }
-                else if (menuSelected == 3)
+                else if ((Menu)menuSelected == Menu.List)
                 {
                     ShowTaskListMenu();
                 }
-            } while (menuSelected != 4);
+            } while ((Menu)menuSelected != Menu.Remove);
         }
         /// <summary>
         /// Show the main menu 
@@ -106,5 +106,13 @@ namespace ToDo
                 Console.WriteLine("----------------------------------------");
             }
         }
+    }
+
+    public enum Menu 
+    {
+        Add = 1,
+        Remove = 2,
+        List = 3,
+        Exit = 4,
     }
 }
