@@ -26,7 +26,7 @@ namespace ToDo
                 {
                     ShowTaskListMenu();
                 }
-            } while ((Menu)menuSelected != Menu.Remove);
+            } while ((Menu)menuSelected != Menu.Exit);
         }
         /// <summary>
         /// Show the main menu 
@@ -52,11 +52,7 @@ namespace ToDo
             {
                 Console.WriteLine("Ingrese el número de la tarea a remover: ");
                 // Show current taks
-                for (int i = 0; i < TaskList.Count; i++)
-                {
-                    Console.WriteLine((i + 1) + ". " + TaskList[i]);
-                }
-                Console.WriteLine("----------------------------------------");
+                ShowTaskListMenu();
 
                 string line = Console.ReadLine();
                 // Remove one position
