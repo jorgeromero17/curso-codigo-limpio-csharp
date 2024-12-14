@@ -19,10 +19,6 @@ do
     }
 } while ((Menu)menuSelected != Menu.Exit);
     
-/// <summary>
-/// Show the main menu 
-/// </summary>
-/// <returns>Returns option indicated by user</returns>
 int ShowMainMenu()
 {
     Console.WriteLine("----------------------------------------");
@@ -32,7 +28,6 @@ int ShowMainMenu()
     Console.WriteLine("3. Tareas pendientes");
     Console.WriteLine("4. Salir");
 
-    // Read line
     string menuSelection = Console.ReadLine();
     if (int.TryParse(menuSelection, out int option))
     {
@@ -45,12 +40,11 @@ void ShowRemoveMenu()
 {
     try
     {
-        // Show current taks
         ShowTaskListMenu();
         if(TaskList.Count > 0) {
             Console.WriteLine("Ingrese el número de la tarea a remover: ");
             string taskNumberToDelete = Console.ReadLine();
-            // Remove one position
+            // Remove one position because the array start in 0
             int indexToRemove = Convert.ToInt32(taskNumberToDelete) - 1;
 
             if (indexToRemove >= 0 && indexToRemove < TaskList.Count)
